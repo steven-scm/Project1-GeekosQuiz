@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title> THE GEEKOS QUIZ</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div id=" logo"></div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Page d'accueil</a></li>
+                <li><a href="mailto:stevenscemama@gmail.com">Contact me</a></li>
+                <li><a href="">Rules</a></li>
+                <li><a href="mailto:stevenscemama@gmail.com">Select your category</a></li>
+                <li><a href="">Leaderbord</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Main -->
+    <section id="main">
+        <h1>Welcome on I LOVE QUIZ, the quiz made for the TRIVIA lovers!</h1>
+
+        <div id="Rules">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, laboriosam molestias laborum officiis
+                animi beatae iusto obcaecati nemo sunt quisquam facilis sequi porro. Consequatur quae illum quo labore,
+                error deserunt!
+            </p>
+        </div>
+
+        <div id="selection">
+            <p>Choose your favorite category
+            </p>
+            <div class="container">
+                <!-- <div class="quiz">QUIZ 1</div>
+                <div class="quiz">QUIZ 2</div>
+                <div class="quiz">QUIZ 3</div>
+                <div class="quiz" id="bonus">QUIZ BONUS</div> -->
+                <button class="btn-quiz" difficulty="easy">Easy Geek</button>
+                <button class="btn-quiz" difficulty="medium">Middle Geek</button>
+                <button class="btn-quiz" difficulty="hard">Hardcore Geek</button>
+                <button class="btn-bonus">Bonus</button>
+            </div>
+        </div>
+
+        <!-- <div id="button"><button type="submit">Launch the selected Quiz</button></div> -->
+    </section>
+
+
+    <div id="quizModule">
+        <div id="quiz" state="">
+            <p id="question"> </p>
+            <div>
+                <ul id="answers">
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="./index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+/*
+*{
+    margin:0;
+    padding:0;
+}
+*/
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+nav a{
+    text-decoration: none;
+}
+a:hover{
+    background-color: darkgray;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height: 100px;
+}
+
+
+.menu{
+    display:flex;
+    align-items: center;
+    list-style:none;
+    gap:200px;
+}
+
+
+#main{
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content:center;
+    /* flex-wrap:wrap; */
+    /* align-items: center; */
+    /*align-content: stretch;*/
+    height: 300px;
+    gap: 20px;
+    /* height: 100px; */
+}
+
+button{
+    height: 200px;
+    width: 200px;
+    border: solid 1px khaki;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: darkgreen;
+}
+
+
+
+
+#quizModule{
+    display: flex;
+    justify-content: center;
+}
+
+#quiz{
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    /* height: 1000%; */
+    background-color: lightgray;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+
+#answers{
+    list-style:none;
+}
+
+#answers li{
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: ghostwhite;
+    border: 2px solid darkgray;
+    border-radius: 25px;
+}
+
+
+
