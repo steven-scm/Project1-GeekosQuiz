@@ -2,58 +2,16 @@ console.log('JS connected');
 
 console.log("hello world");
 
-// let buttonQuiz1Ele = document.getElementById('quiz1');
-// //let button = document.getElementsByName('button');
-// let buttonQuiz2Ele = document.getElementById('quiz2');
-// let buttonQuiz3Ele = document.getElementById('quiz3');
-// let buttonQuiz4Ele = document.getElementById('quiz4');
 
-
-
-// console.log(buttonQuiz1Ele);
-// console.log(buttonQuiz2Ele);
-// console.log(buttonQuiz3Ele);
-// console.log(buttonQuiz4Ele);
-
-// const handleClick1 = () => {
-//     console.log("Hello World");
-// }
-// const handleClick2 = () => {
-//     console.log("Hello World");
-// }
-// const handleClick3 = () => {
-//     console.log("Hello World");
-// }
-// const handleClick4 = () => {
-//     console.log("Hello World");
-// }
-
-// buttonQuiz1Ele.addEventListener("click", handleClick1);
-// buttonQuiz2Ele.addEventListener("click", handleClick2);
-// buttonQuiz3Ele.addEventListener("click", handleClick3);
-// buttonQuiz4Ele.addEventListener("click", handleClick4);
-
-
-
-// const getCountryInfo = countryName => {
-//     axios
-//       .get(`https://restcountries.eu/rest/v2/name/${countryName}`)
-//       .then(response => {
-//         console.log('Response from API is: ', response);
-//         const countryDetail = response.data[0];
-//         console.log('a single country details: ', countryDetail);
-//       })
-//       .catch(err => console.log(err));
-//   };
-
-//   document.getElementById('get-country-btn').addEventListener('click', () => {
-//     const userInput = document.getElementById('country-name-input').value;
-//     getCountryInfo(userInput);
-//   });
-
-let compteur = 0;
+let compteur = 1;
 let questionArray = [];
 let score = 0;
+
+let playerScore = document.querySelector('#player-score');
+let questionNumber = document.querySelector('#question-number');
+
+let quizModule = document.querySelector("#quizModule");
+let main = document.querySelector("main");
 
 
 const getQuiz = difficulty => {
@@ -74,6 +32,14 @@ const getQuiz = difficulty => {
             questionArray = opentdbGeek;
 
             setQuiz(opentdbGeek);
+            const container = document.querySelector('#selection');
+            container.style.display = "none";
+            quizModule.style.display = "flex";
+
+            const relaunchButton = document.createElement('button');
+            main.appendChild(relaunchButton);
+            relaunchButton.innerHTML = "Reboot game!";
+            relaunchButton.addEventListener('click', () => location.reload());
 
         })
         .catch(err => console.log(err));
@@ -100,7 +66,7 @@ btnBonus.addEventListener('click', () => {
             console.log('Response from API is: ', response.data.results);
             const opentdbQuiz = response.data.results;
 
-            //on est dans le quiz
+            //on est dans le quiz bonus
 
             for (let i = 0; i < opentdbQuiz.length; i++) {
                 let responseArray = [...opentdbQuiz[i].incorrect_answers];
@@ -113,8 +79,17 @@ btnBonus.addEventListener('click', () => {
             questionArray = opentdbQuiz;
 
             setQuiz(opentdbQuiz);
-            const container = document.querySelector('.container');
+
+            const container = document.querySelector('#selection');
             container.style.display = "none";
+
+            quizModule.style.display = "flex";
+
+            const relaunchButton = document.createElement('button');
+            main.appendChild(relaunchButton);
+            relaunchButton.innerHTML = "Reboot game!";
+            relaunchButton.addEventListener('click', () => location.reload());
+
 
         })
         .catch(err => console.log(err));
@@ -133,6 +108,10 @@ btnBonus.addEventListener('click', () => {
 //         setResponse(responseArray);
 //     }
 // }
+
+
+
+
 
 
 function setQuiz(array) {
@@ -160,7 +139,9 @@ function setResponse(array) {
         listeReponse.appendChild(li);
 
         li.addEventListener("click", () => {
-            if (compteur >= questionArray.length - 1) {
+
+
+            if (compteur >= questionArray.length) {
                 console.log("we reached the last question");
                 alert(`GAME IS OVER YOUR SCORE WAS ${score}/10
 
@@ -173,13 +154,18 @@ function setResponse(array) {
             } else if (li.innerHTML === array.correct_answer) {
                 li.style.backgroundColor = 'green';
                 score++;
+                playerScore.innerHTML = score;
                 compteur++;
+                questionNumber.innerHTML = compteur;
                 const timeOutId = setTimeout(() => setQuiz(questionArray), 1000);
             } else {
                 li.style.backgroundColor = 'red';
-                setTimeout(() => alert("WRONG : the good answer was " + array.correct_answer), 1000);
-                compteur++;
-                const timeOutId = setTimeout(() => setQuiz(questionArray), 1000);
+                setTimeout(() => {
+                    alert("WRONG : the good answer was " + array.correct_answer);
+                    compteur++;
+                    questionNumber.innerHTML = compteur;
+                    setQuiz(questionArray)
+                }, 500);
             }
         })
 

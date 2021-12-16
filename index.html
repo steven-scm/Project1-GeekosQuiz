@@ -11,7 +11,7 @@
 
 <body>
     <!-- Header -->
-    <header>
+    <!-- <header>
         <div id=" logo"></div>
         <nav>
             <ul class="menu">
@@ -22,54 +22,68 @@
                 <li><a href="">Leaderbord</a></li>
             </ul>
         </nav>
-    </header>
+    </header> -->
 
     <!--Main -->
-    <section id="main">
-        <h1>Welcome on I LOVE QUIZ, the quiz made for the TRIVIA lovers!</h1>
+    <main>
 
-        <div id="Rules">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, laboriosam molestias laborum officiis
-                animi beatae iusto obcaecati nemo sunt quisquam facilis sequi porro. Consequatur quae illum quo labore,
-                error deserunt!
-            </p>
-        </div>
 
-        <div id="selection">
-            <p>Choose your favorite category
-            </p>
-            <div class="container">
-                <!-- <div class="quiz">QUIZ 1</div>
+        <section id="main">
+            <h1>Welcome to <span style="color:whitesmoke;background-color:black">The Geekos Quiz</span> the TRIVIA game
+                for <span style="color:whitesmoke;background-color:black">Geeks!</span>
+            </h1>
+
+            <div id="Rules">
+                <p>Well you know the rules are pretty trivial (no pun intended 😄) and for a brainiac like you, do you
+                    even
+                    need to read the rules or
+                    notice to figure out how to do something ?! 🧠 </p>
+                </p>
+            </div>
+
+            <div id="selection">
+                <p>Choose your favorite category
+                </p>
+                <div class="container">
+                    <!-- <div class="quiz">QUIZ 1</div>
                 <div class="quiz">QUIZ 2</div>
                 <div class="quiz">QUIZ 3</div>
                 <div class="quiz" id="bonus">QUIZ BONUS</div> -->
-                <button class="btn-quiz" difficulty="easy">Easy Geek</button>
-                <button class="btn-quiz" difficulty="medium">Middle Geek</button>
-                <button class="btn-quiz" difficulty="hard">Hardcore Geek</button>
-                <button class="btn-bonus">Bonus</button>
+                    <button class="btn-quiz" difficulty="easy">Easy Geek</button>
+                    <button class="btn-quiz" difficulty="medium">Middle Geek</button>
+                    <button class="btn-quiz" difficulty="hard">Hardcore Geek</button>
+                    <button class="btn-bonus">Bonus</button>
+                </div>
+            </div>
+
+            <!-- <div id="button"><button type="submit">Launch the selected Quiz</button></div> -->
+        </section>
+
+
+        <div id="quizModule">
+            <div id="quiz-details-container">
+                <h1>Score : <span id="player-score">0</span> / 10</h1>
+                <h1> Question : <span id="question-number">1</span> / 10</h1>
+            </div>
+
+            <div id="quiz" state="">
+                <div id="question-container">
+                    <p id="question"> </p>
+                </div>
+                <div id="answers-container">
+                    <ul id="answers">
+
+                    </ul>
+                </div>
+
             </div>
         </div>
 
-        <!-- <div id="button"><button type="submit">Launch the selected Quiz</button></div> -->
-    </section>
-
-
-    <div id="quizModule">
-        <div id="quiz" state="">
-            <p id="question"> </p>
-            <div>
-                <ul id="answers">
-
-                </ul>
-            </div>
-
-        </div>
-    </div>
 
 
 
 
-
+    </main>
 
     <script src="./index.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
