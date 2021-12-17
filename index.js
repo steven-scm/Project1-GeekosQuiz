@@ -295,7 +295,7 @@ function setQuiz(array) {
         ---- YOUR FINAL SCORE WAS ${score}/10 ----
 
         CLICK OK TO RESTART THE GAME` );
-        setTimeout(() => location.reload(), 1000);
+        setTimeout(() => location.reload(), 50);
     }
     setQuestion(array[compteur]);
     setResponse(array[compteur]);
