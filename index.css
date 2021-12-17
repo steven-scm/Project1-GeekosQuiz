@@ -1,13 +1,22 @@
-/*
-*{
+
+/* *{
+    margin:0;
+    padding:0;
+} */
+
+li{
     margin:0;
     padding:0;
 }
-*/
+
+ul{
+    margin: 10px;
+    padding:10px;
+}
+
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-
 }
 
 main {
@@ -15,36 +24,48 @@ main {
     margin: auto;
     padding: 20px;
     background-color:lime;
-
-
+    text-align: center;
 }
 
-nav a{
+#rules{
+    font-weight:bold;
+    font-style: italic;
+}
+
+
+#relaunchButton{
+    background-color: tomato;
+    margin: 20px;
+}
+
+
+
+/* nav a{
     text-decoration: none;
-}
-a:hover{
-    background-color: darkgray;
-}
+} */
 
-nav{
+/* a:hover{
+    background-color: darkgray;
+} */
+
+/* nav{
     display:flex;
     justify-content:center;
     align-items: center;
     height: 100px;
-}
+} */
 
-
+/* 
 .menu{
     display:flex;
     align-items: center;
     list-style:none;
     gap:200px;
-}
+} */
 
 
-#main{
-    text-align: center;
-}
+
+
 
 .container{
     display: flex;
@@ -57,7 +78,7 @@ nav{
     /* height: 100px; */
 }
 
-.btn-quiz, .btn-bonus{
+.btn {
 
     height: 200px;
     width: 200px;
@@ -66,7 +87,34 @@ nav{
     vertical-align: middle;
     line-height: 200px;
     cursor: pointer;
+    font-weight: bold;
+    font-style: oblique;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 20px;
 }
+
+.btn-bonus{
+    background-color: lightcyan;
+    background: linear-gradient( 90deg, #000000, #000000, rgb(68, 68, 68));
+}
+
+.btn>span{
+    background-color: whitesmoke;
+}
+
+.btn-bonus:hover {
+
+    height: 200px;
+    width: 200px;
+    border: solid 1px khaki;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200px;
+    cursor: pointer;
+    background-image: url("https://static.news.bitcoin.com/wp-content/uploads/2020/03/NonlLKVf-mask.png");
+    background-size: cover;
+    transition: margin-right 2s ease-in-out;
+}
+
 
 button:hover{
     background-color: darkgreen;
@@ -75,12 +123,14 @@ button:hover{
 
 
 
+
+
 #quizModule{
-    /* display: flex; */
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
     display: none;
+    background-size:cover;
 }
 
 #quiz-details-container{
@@ -89,19 +139,28 @@ button:hover{
     display: flex;
     justify-content: space-around;
     /* align-items: center; */
+  
+}
+
+#quiz-details-container h1{
+    background-color: lightgray;
+    opacity: 0.95;
+    border-radius: 30px;
+    padding: 10px;
 }
 
 
 #quiz{
     display: flex;
-    justify-content: center;
     width: 800px;
     /* height: 1000%; */
     background-color: lightgray;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     border-radius: 30px;
+    opacity: 0.95;
+    margin-bottom: 20px;
 }
 
 #question-container{
@@ -114,7 +173,7 @@ button:hover{
 
 #question-container p{
     font-size: 1.5rem;
-    text-align: center;
+    /* text-align: center; */
     padding: 3px;
 }
 
@@ -122,7 +181,6 @@ button:hover{
 
 ul#answers{
     list-style:none;
-    display: grid;
 }
 
 #answers li{
@@ -131,6 +189,7 @@ ul#answers{
     background-color: ghostwhite;
     border: 2px solid darkgray;
     border-radius: 25px;
+    padding: 20px;
 }
 
 
